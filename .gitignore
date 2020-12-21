@@ -1,3 +1,6 @@
+<<<<<<< HEAD
+nlp_spacy/Slide/
+=======
 .ipynb_checkpoints
 nlp_spacy/Slide/
 
@@ -130,3 +133,4 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+>>>>>>> 4283d3ec000306e349a343284c8ddf586be07ff2
