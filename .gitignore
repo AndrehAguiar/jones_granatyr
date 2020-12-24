@@ -1,8 +1,8 @@
-<<<<<<< HEAD
-nlp_spacy/Slide/
-=======
 .ipynb_checkpoints
-nlp_spacy/Slide/
+*/Slide/
+nlp_deep_learning/trainingandtestdata/
+nlp_deep_learning/__MACOSX/
+nlp_deep_learning/ckpts_#1/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
