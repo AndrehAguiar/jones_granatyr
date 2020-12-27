@@ -1,8 +1,15 @@
 .ipynb_checkpoints
+.idea
+
 */Slide/
+
 nlp_deep_learning/trainingandtestdata/
 nlp_deep_learning/__MACOSX/
 nlp_deep_learning/ckpts_#1/
+nlp_deep_learning/pt-en/
+nlp_deep_learning/pt-en.zip
+nlp_deep_learning/pt-en.tgz
+nlp_nltk/env_nlp_nltk/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
