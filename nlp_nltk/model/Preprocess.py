@@ -21,7 +21,9 @@ class Preprocess(Classifier):
                                 'alguem','ver','dinheiro','lugar','parece','ficou','vamos','olho','olhou','olhar','perto','longe','ficou','ficar',
                                 'todos','todas','completo','completa','nada','pessoa','quero','quer','nunca','sempre','passo','passa','passou',
                                 'completa','assim','sei','como','com','tanto','conto','conta','contou','conto','contar','comer','olhando','estou',
-                                'está','esta','estou'])
+                                'está','esta','a', 'agora', 'alguma', 'aquele', 'aqueles', 'de', 'deu', 'do', 'e',
+                                'ir', 'muito', 'mesmo', 'no', 'nossa', 'o', 'outro', 'para', 'que', 'sem', 'talvez', 'tem', 'tendo',
+                                'tenha', 'teve', 'tive', 'um', 'uma', 'umas', 'uns'])
         phrases = []
         for (words, label) in corpus:
             cleanwords = [word.replace('?', '').replace('!', '') for word in words.split() if
@@ -83,7 +85,12 @@ class Preprocess(Classifier):
         return features
 
     def builddata(self, corpus: list[tuple], train: bool = True) -> list[tuple[dict, str]]:
-
+        """
+        Build the corpus with the format to train, test and classify
+        :param corpus:  Data raw -> List of tuples ('document','label') if train else string
+        :param train: Default True, if False preprocess the document without label
+        :return: prerpocessed corpus or document
+        """
         data_train = nltk.classify.apply_features(self.extractfeatures,
                                                   self.applystemmer(self.cleancorpus(corpus)))
         if train:

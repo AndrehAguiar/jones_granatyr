@@ -1,6 +1,7 @@
 class Corpus:
 
     def __init__(self):
+        super(Corpus, self).__init__()
         self.data_train = [('este trabalho e agradável', 'alegria'),
                            ('gosto de ficar no seu aconchego', 'alegria'),
                            ('fiz a adesão ao curso hoje', 'alegria'),

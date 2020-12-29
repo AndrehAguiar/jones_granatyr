@@ -22,8 +22,9 @@ labels = model.labels() # Imprime a lista de probabilidade das classes
 
 data_test = preprocess.builddata(corpus.data_test)
 preprocess.eval(data_test)
+# print(preprocess.checkerrors(data_test))
 
-def classifyphrase(phrase: str):
+def classifyphrase(phrase: str)->dict:
     phrase = [(phrase, '')]
     test = preprocess.extractfeatures(
         preprocess.builddata(phrase, train=False))
@@ -35,7 +36,8 @@ def classifyphrase(phrase: str):
     print(f"Class: {result}, Probability: {prob}")
     return {'result': result, 'prob': prob}
 
+preprocess.confmatrix(data_test)
 
 # test = classifyphrase('hoje é um belo dia')
 # test = classifyphrase('eu sinto amor por voce')
-print(model.show_most_informative_features(30))
+# print(model.show_most_informative_features(30))
