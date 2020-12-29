@@ -97,13 +97,35 @@ palavrasunicas = buscapalavrasunicas(frequencia)
 def extratorpalavras(documento):
     doc = set(documento)
     caracteristicas = {}
-    for palavras in palavrasunicas:
+    for palavras in doc:
         caracteristicas['%s' % palavras] = (palavras in doc)
     return caracteristicas
 
 
 caracteristicasfrase = extratorpalavras(['am', 'nov', 'dia'])
-# print(caracteristicasfrase)
+#print(caracteristicasfrase)
 
 basecompleta = nltk.classify.apply_features(extratorpalavras, frasescomstemming)
 # print(basecompleta)
+
+
+classificador = nltk.NaiveBayesClassifier.train(basecompleta)
+# print(classificador.labels())
+# print(classificador.show_most_informative_features(5))
+
+teste = 'hoje é um belo dia'
+testestemming = []
+stemmer = nltk.stem.RSLPStemmer()
+for (palavras) in teste.split():
+    comstemm = [p for p in palavras.split()]
+    testestemming.append(str(stemmer.stem(comstemm[0])))
+
+print(testestemming)
+
+novo = extratorpalavras(testestemming)
+# print(novo)
+
+print(classificador.classify(novo))
+distribuicao = classificador.prob_classify(novo)
+for classe in distribuicao.samples():
+    print("%s: %f" % (classe, distribuicao.prob(classe)))
