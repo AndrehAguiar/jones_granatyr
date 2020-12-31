@@ -20,3 +20,10 @@ Aprenda os conceitos de processamento de linguagem natural! Construa um classifi
 
 #### [NLP spaCy](https://github.com/AndrehAguiar/jones_granatyr/tree/main/nlp_spacy)
 ---
+
+## [Inteligência Artificial: Sistemas de Recomendação em Python](https://www.udemy.com/share/101JCMBUUfdFpRRng=/)
+
+Construa passo a passo no Python um algoritmo para recomendação de filmes parecido com o da Netflix!
+
+#### [Recommend System](https://github.com/AndrehAguiar/jones_granatyr/tree/main/recommend_system)
+---
