@@ -11,6 +11,8 @@ nlp_deep_learning/pt-en.zip
 nlp_deep_learning/pt-en.tgz
 nlp_nltk/env_nlp_nltk/
 recommend_system/ml-100k.zip
+opencv_face_detect/*.zip
+opencv_face_detect/env_opencv/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
