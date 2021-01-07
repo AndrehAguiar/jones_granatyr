@@ -44,3 +44,8 @@ for image in list(marked_imgs.keys()):
 """
 # https://pythonprogramming.net/haar-cascade-object-detection-python-opencv-tutorial/
 
+marked_imgs = detect.get_bananas()
+for image in list(marked_imgs.keys()):
+    print(f"Result cats: {image} <".ljust(50, '#'))
+    cv2.imshow(image, marked_imgs[image])
+    cv2.waitKey()

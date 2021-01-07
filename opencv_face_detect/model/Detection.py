@@ -4,6 +4,7 @@ import os
 from model.Clock import Clock
 from model.Cat import Cat
 from model.Car import Car
+from model.Banana import Banana
 from model.Face import Face
 from model.Eye import Eye
 from model.Cam import Cam
@@ -23,6 +24,7 @@ class Detection:
         self.__cat = None
         self.__clock = None
         self.__car = None
+        self.__banana = None
         self.__load_data()
 
     def __load_data(self):
@@ -93,3 +95,14 @@ class Detection:
             cars[image] = self.__car.draw_rectangle(result[image], self.__dct_images[image])
 
         return cars
+
+    def get_bananas(self):
+        bananas = {}
+        self.__banana = Banana(self.__dct_im_gray)
+        result = self.__banana.get_result()
+
+        for image in list(result.keys()):
+            bananas.setdefault(image, [])
+            bananas[image] = self.__banana.draw_rectangle(result[image], self.__dct_images[image])
+
+        return bananas
