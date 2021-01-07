@@ -21,6 +21,13 @@ Aprenda os conceitos de processamento de linguagem natural! Construa um classifi
 #### [NLP spaCy](https://github.com/AndrehAguiar/jones_granatyr/tree/main/nlp_spacy)
 ---
 
+## [Detecção de Faces com Python e OpenCV](https://www.udemy.com/share/101uM0BUUfdFpRRng=/)
+
+Aprenda passo a passo como utilizar o Python e o OpenCV para detectar faces em imagens e pela webcam!
+
+#### [opencv_face_detect](https://github.com/AndrehAguiar/jones_granatyr/tree/main/opencv_face_detect)
+---
+
 ## [Inteligência Artificial: Sistemas de Recomendação em Python](https://www.udemy.com/share/101JCMBUUfdFpRRng=/)
 
 Construa passo a passo no Python um algoritmo para recomendação de filmes parecido com o da Netflix!
