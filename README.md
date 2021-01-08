@@ -25,7 +25,7 @@ Aprenda os conceitos de processamento de linguagem natural! Construa um classifi
 
 Aprenda passo a passo como utilizar o Python e o OpenCV para detectar faces em imagens e pela webcam!
 
-#### [opencv_face_detect](https://github.com/AndrehAguiar/jones_granatyr/tree/main/opencv_face_detect)
+#### [OpenCV Face Detect](https://github.com/AndrehAguiar/jones_granatyr/tree/main/opencv_face_detect)
 ---
 
 ## [Inteligência Artificial: Sistemas de Recomendação em Python](https://www.udemy.com/share/101JCMBUUfdFpRRng=/)
