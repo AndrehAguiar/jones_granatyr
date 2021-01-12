@@ -142,16 +142,16 @@ begin
             curso = 'TÉCNICO EM MEIO AMBIENTE' or
             curso = 'TÉCNICO EM ENFERMAGEM - NOTURNO' or
             curso = 'TÉCNICO EM SEGURANÇA DO TRABALHO') then
-	  set grau = 'TÉCNICO';
+		set grau = 'TÉCNICO';
 	
     elseif (curso = 'CIÊNCIAS BIOLÓGICAS - LICENCIATURA' or 
 			curso = 'EDUCAÇÃO FÍSICA - LICENCIATURA - VESPERTINO' or
 			curso = 'EDUCAÇÃO FÍSICA - LICENCIATURA - NOTURNO') then
-     set grau = 'LICENCIATURA';
+		set grau = 'LICENCIATURA';
      
      elseif (curso = 'EDUCAÇÃO FÍSICA - BACHARELADO - NOTURNO' or
 			curso = 'EDUCAÇÃO FÍSICA - BACHARELADO - VESPERTINO') then
-     set grau = 'BACHARELADO';
+		set grau = 'BACHARELADO';
     
     end if;
 	return grau;
