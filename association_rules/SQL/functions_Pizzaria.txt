@@ -1,0 +1,119 @@
+SET GLOBAL log_bin_trust_function_creators = 1;
+
+-- Preprocess date
+delimiter $$
+create function GetDiaSemana(data_pedido date) returns varchar(10)
+begin
+	return dayname(data_pedido);
+end $$
+delimiter ;
+
+select data_pedido, GetDiaSemana(data_pedido) from pedidos;
+
+-- Preprocess hour
+delimiter $$
+create function GetPeriodoVenda(hora_pedido time) returns varchar(10)
+begin
+	declare periodo varchar(10);
+    if (hora_pedido < '20:00:00') then
+		set periodo = 'Inicio';
+	elseif (hora_pedido >= '20:00:00' and hora_pedido < '22:00:00') then
+		set periodo = 'Pico';
+	elseif (hora_pedido >= '22:00:00') then
+		set periodo = 'Final';
+	end if;
+    return periodo;
+end $$
+delimiter ;
+
+select hora_pedido, GetPeriodoVenda(hora_pedido) from pedidos;
+
+-- Preprocess valor_borda and valor_refrigerante
+delimiter $$
+create function GetBorda(valor_borda float) returns varchar(10)
+begin
+	declare borda varchar(10);
+    if (valor_borda > 0) then
+		set borda = 'Borda sim';
+    else
+		set borda = 'Borda não';
+	end if;
+    
+    return borda;
+    
+end $$
+delimiter ;
+
+-- Preprocess valor_borda and valor_refrigerante
+delimiter $$
+create function GetRefrigerante(valor_refrigerante float) returns varchar(20)
+begin
+	declare refrigerante varchar(20);
+    if (valor_refrigerante > 0) then
+		set refrigerante = 'Refrigerante sim';
+    else
+		set refrigerante = 'Refrigerante não';
+	end if;
+    
+    return refrigerante;
+    
+end $$
+delimiter ;
+
+select valor_borda, GetBorda(valor_borda),
+valor_refrigerante, GetRefrigerante(valor_refrigerante) from pedidos;
+
+-- Preprocess valor_total
+delimiter $$
+create function GetFaixaValor(valor_total float) returns varchar(10)
+begin
+	declare faixa varchar(10);
+	if (valor_total >= 10 and valor_total < 14) then
+		set faixa = '10-14';
+	elseif (valor_total >= 14 and valor_total < 18) then
+		set faixa = '14-18';
+	elseif (valor_total >= 18 and valor_total < 22) then
+		set faixa = '18-22';
+	elseif (valor_total >= 22 and valor_total < 26) then
+		set faixa = '22-26';
+	elseif (valor_total >= 26 and valor_total < 30) then
+		set faixa = '26-30';
+	elseif (valor_total >= 30 and valor_total < 34) then
+		set faixa = '30-34';
+	elseif (valor_total >= 34 and valor_total < 38) then
+		set faixa = '34-38';
+	elseif (valor_total >= 38 and valor_total < 42) then
+		set faixa = '38-42';
+	elseif (valor_total >= 42 and valor_total < 46) then
+		set faixa = '42-46';
+	elseif (valor_total >= 46 and valor_total < 50) then
+		set faixa = '46-50';
+	end if;
+
+	return faixa;
+end $$
+delimiter ;
+
+select count(valor_total), GetFaixaValor(valor_total)
+from pedidos group by GetFaixaValor(valor_total);
+
+-- Preprocess tempo de entrega
+delimiter $$
+create function GetFaixaTempo(minutos float) returns varchar (10)
+begin
+	declare faixa varchar(10);
+    if (minutos >= 10 and minutos < 22) then
+		set faixa = '10-22';
+	elseif (minutos >= 22 and minutos < 33) then
+		set faixa = '22-33';
+	elseif (minutos >= 33 and minutos < 44) then
+		set faixa = '33-44';
+	elseif (minutos >= 44) then
+		set faixa = '44-55';
+	end if;
+    
+    return faixa;
+end $$
+delimiter ;
+
+select tempo, GetFaixaTempo(minute(tempo)) from pedidos;

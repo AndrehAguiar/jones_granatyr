@@ -1,0 +1,75 @@
+create database pizzaria;
+-- import pizzaria+backup.sql
+SELECT * FROM pizzaria.pedidos;
+
+/* FEATURE ENGINEER */
+-- Selecting features
+alter table pizzaria.pedidos drop column numero;
+alter table pizzaria.pedidos drop column cliente;
+alter table pizzaria.pedidos drop column endereco;
+alter table pizzaria.pedidos drop column telefone;
+alter table pizzaria.pedidos drop column valor_pizza;
+alter table pizzaria.pedidos drop column valor_entrega;
+alter table pizzaria.pedidos drop column hora_entrega;
+SELECT * FROM pizzaria.pedidos;
+
+-- Preprocess date
+select max(data_pedido), min(data_pedido) from pedidos;
+delete from pizzaria.pedidos where year(data_pedido) >= 2015;
+
+select max(data_pedido), min(data_pedido) from pedidos;
+select dayname(data_pedido) from pedidos;
+select @@lc_time_names;
+set lc_time_names = 'pt_BR';
+select @@lc_time_names;
+select dayname(data_pedido) from pedidos;
+
+-- Preprocess hour
+select max(hora_pedido), min(hora_pedido) from pedidos;
+
+-- Preprocess valor_borda and valor_refrigerante
+select valor_borda, valor_refrigerante from pedidos;
+
+-- Preprocess valor_total
+select count(*), valor_total from pedidos group by valor_total;
+select valor_total from pedidos;
+#/ Save result valor_total.csv /#
+
+-- Preprocess tempo de entrega
+select max(tempo), min(tempo) from pedidos;
+select minute(tempo) from pedidos;
+
+select count(*), GetDiaSemana(data_pedido)
+from pedidos group by GetDiaSemana(data_pedido);
+
+select count(*), GetPeriodoVenda(hora_pedido)
+from pedidos group by GetPeriodoVenda(hora_pedido);
+
+select * from pedidos;
+select count(*), tipo_entrega
+from pedidos group by tipo_entrega;
+
+select count(*), GetBorda(valor_borda)
+from pedidos group by GetBorda(valor_borda);
+
+select count(*), GetRefrigerante(valor_refrigerante)
+from pedidos group by GetRefrigerante(valor_refrigerante);
+
+select count(*), GetFaixaValor(valor_total)
+from pedidos group by GetFaixaValor(valor_total);
+
+select count(*), GetFaixaTempo(minute(tempo))
+from pedidos group by GetFaixaTempo(minute(tempo));
+
+select
+	GetDiaSemana(data_pedido) as dia,
+    GetPeriodoVenda(hora_pedido) as periodo,
+    tipo_entrega,
+    GetBorda(valor_borda) as borda,
+    GetRefrigerante(valor_refrigerante) as refrigerante,
+    GetFaixaValor(valor_total) as valor_total,
+    GetFaixaTempo(minute(tempo)) as tempo
+from
+	pedidos
+    
+#/ SAVE RESULT base_pizzaria.csv /#
