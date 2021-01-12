@@ -1,7 +1,7 @@
 from model.Detection import Detection
 import cv2
 
-# detect = Detection()
+#detect = Detection()
 
 """
 marked_imgs = detect.get_faces()

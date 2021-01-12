@@ -1,0 +1,133 @@
+/* PROCESSO KDD (Knowledge Discovery in Databases) */
+create database vestibular;
+
+/* IMPORT vestibular+backup.sql */
+-- https://www.devmedia.com.br/mineracao-de-dados-educacionais-usando-kdd-parte-1/28968
+-- https://www.devmedia.com.br/mineracao-de-dados-educacionais-usando-kdd-parte-2/29142
+
+# DADOS
+select * from vestibular.socioeconomica;
+
+# SELEÇÃO
+alter table socioeconomica drop column inscricao;
+
+# PRÉ-PROCESSAMENTO
+select * from socioeconomica where idade < 14 or idade > 80;
+# OPÇÕES
+-- 1. Buscar o dado correto
+-- 2. Apagar os registros
+-- 3. Correção nos dados
+select avg(idade) from socioeconomica where idade > 14 and idade < 80;
+update socioeconomica set idade = 20
+where idade < 14 or idade > 80;
+
+select avg(idade) from socioeconomica;
+
+# TRANSFORMAÇÃO
+select distinct(idade) from socioeconomica;
+select distinct(total_pontos) from socioeconomica;
+select distinct(curso) from socioeconomica;
+
+# Visualizando os dados agrupados
+-- PONTOS
+select count(*), GetClassePontos(total_pontos) from socioeconomica
+group by GetClassePontos(total_pontos);
+######
+-- CURSO
+select count(*), GetNomeCurso(curso) from socioeconomica
+group by GetNomeCurso(curso);
+######
+-- GRAU DO CURSO
+select count(*), GetGrauCurso(curso) from socioeconomica
+group by GetGrauCurso(curso);
+#######
+-- PERÍODO DO CURSO
+select count(*), GetPeriodoCurso(curso) from socioeconomica
+group by GetPeriodoCurso(curso);
+#######
+-- GÊNERO
+select count(*), sexo from socioeconomica
+group by sexo;
+#######
+-- IDADE
+select count(*), GetFaixaIdade(idade) from socioeconomica
+group by GetFaixaIdade(idade);
+#######
+-- LOCAL ORIGEM
+select count(*), local_origem from socioeconomica
+group by local_origem;
+#######
+-- TIPO INSTITUIÇÃO
+select count(*), tipo_instituicao from socioeconomica
+group by tipo_instituicao;
+#######
+-- RENDA FAMILIAR
+select count(*), renda_familiar from socioeconomica
+group by renda_familiar;
+#######
+-- TIPO RESIDÊNCIA
+select count(*), tipo_residencia from socioeconomica
+group by tipo_residencia;
+#######
+-- GRAU ESCOLARIDADE
+select count(*), grau_escolaridade from socioeconomica
+group by grau_escolaridade;
+#######
+-- MOTIVO DE PARTICIPAÇÃO
+select count(*), motivo from socioeconomica
+group by motivo;
+#######
+-- TRANSPORTE PARA PROVA
+select count(*), transporte from socioeconomica
+group by transporte;
+#######
+-- INSTRUÇÃO DO PAI
+select count(*), instrucao_pai from socioeconomica
+group by instrucao_pai;
+#######
+-- INSTRUÇÃO DO MÃE
+select count(*), instrucao_mae from socioeconomica
+group by instrucao_mae;
+#######
+-- POSSUI AUTOMÓVEL
+select count(*), automovel from socioeconomica
+group by automovel;
+#######
+-- LÊ LIVROS
+select count(*), livros from socioeconomica
+group by livros;
+#######
+-- TIPO DE LEITURA
+select count(*), leitura from socioeconomica
+group by leitura;
+#######
+-- ACESSO À INTERNET
+select count(*), internet from socioeconomica
+group by internet;
+#######
+
+/* SAVE base_vestibular.csv */
+select
+	GetClassePontos(total_pontos) as pontos,
+    GetNomeCurso(curso) as curso,
+    GetGrauCurso(curso) as grau,
+    GetPeriodoCurso(curso) as periodo,
+    sexo,
+    GetFaixaIdade(idade) as idade,
+    local_origem,
+    tipo_instituicao,
+    renda_familiar,
+    tipo_residencia,
+    grau_escolaridade,
+    motivo,
+    transporte,
+    instrucao_pai,
+    instrucao_mae,
+    automovel,
+    livros,
+    leitura,
+    internet
+from
+	socioeconomica;
+###################################################
+    
