@@ -355,7 +355,11 @@ class Stats:
         :params data: Pandas Series, Numpy Array ou list object
         :return: float
         """
-        return sum(data) / len(data)
+        
+        if type(data) != pd.Series:
+            data = pd.Series(data).sort_values().reset_index(drop=True)
+            
+        return data.sum() / len(data)
         
         
     def geom_mean(self, data: pd.Series) -> float:
