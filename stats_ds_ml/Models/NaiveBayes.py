@@ -162,8 +162,6 @@ class NaiveBayes:
         
         df_mult = self.__format_columns(cols)
         
-        print(len(self.__df_raw) == 0)
-        
         if len(self.__df_raw) == 0:        
             self.__df = pd.DataFrame(columns = df_mult, index=sorted(self.__data[self.__target].unique()))
             return self.__prob_calculates(self.__data)
