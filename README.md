@@ -42,8 +42,7 @@ Construa passo a passo no Python um algoritmo para recomendação de filmes pare
 #### [Recommend System](https://github.com/AndrehAguiar/jones_granatyr/tree/main/recommend_system)
 ---
 
-## [Estatística para Ciência de Dados e Machine Learning
-](https://www.udemy.com/share/103B12BUUfdFpRRng=/)
+## [Estatística para Ciência de Dados e Machine Learning](https://www.udemy.com/share/103B12BUUfdFpRRng=/)
 
 Aprenda na teoria e na prática tudo o que você precisa saber sobre estatística em Data Science utilizando o Python!
 
