@@ -34,9 +34,18 @@ Aprenda passo a passo como utilizar o Python e o OpenCV para detectar faces em i
 
 #### [OpenCV Face Detect](https://github.com/AndrehAguiar/jones_granatyr/tree/main/opencv_face_detect)
 ---
+
 ## [Inteligência Artificial: Sistemas de Recomendação em Python](https://www.udemy.com/share/101JCMBUUfdFpRRng=/)
 
 Construa passo a passo no Python um algoritmo para recomendação de filmes parecido com o da Netflix!
 
 #### [Recommend System](https://github.com/AndrehAguiar/jones_granatyr/tree/main/recommend_system)
+---
+
+## [Estatística para Ciência de Dados e Machine Learning
+](https://www.udemy.com/share/103B12BUUfdFpRRng=/)
+
+Aprenda na teoria e na prática tudo o que você precisa saber sobre estatística em Data Science utilizando o Python!
+
+#### [Stats DS ML](https://github.com/AndrehAguiar/jones_granatyr/tree/main/stats_ds_ml)
 ---
