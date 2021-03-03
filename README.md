@@ -7,6 +7,13 @@ Aprenda a descobrir padrões escondidos em bases de dados comerciais utilizando 
 #### [Association Rules](https://github.com/AndrehAguiar/jones_granatyr/tree/main/association_rules)
 ---
 
+## [Deep Learning de A à Z com PyTorch e Python](https://www.udemy.com/share/102EY2BUUfdFpRRng=/)
+
+Aprenda tudo o que você precisa saber para dominar a área de Deep Learning utilizando a biblioteca PyTorch e o Python!
+
+#### [Deep Learning - PyTorch](https://github.com/AndrehAguiar/jones_granatyr/tree/main/dl_PyTorch)
+---
+
 ## [Mineração de Emoção em Textos com Python e NLTK](https://www.udemy.com/share/101CfKBUUfdFpRRng=/)
 
 Aprenda passo a passo na teoria e na prática como utilizar o Python e o NLTK para minerar emoções em textos!
