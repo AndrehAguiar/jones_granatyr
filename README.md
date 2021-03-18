@@ -7,6 +7,13 @@ Aprenda a descobrir padrões escondidos em bases de dados comerciais utilizando 
 #### [Association Rules](https://github.com/AndrehAguiar/jones_granatyr/tree/main/association_rules)
 ---
 
+## [Ciência de Dados para Empresas e Negócios](https://www.udemy.com/share/103IbiBUUfdFpRRng=/)
+
+Data Science aplicado em 6 problemas reais de negócios! Marketing, vendas, RH, relações públicas, medicina e produção!
+
+#### [Data Science for Business](https://github.com/AndrehAguiar/jones_granatyr/tree/main/dl_PyTorch)
+---
+
 ## [Deep Learning de A à Z com PyTorch e Python](https://www.udemy.com/share/102EY2BUUfdFpRRng=/)
 
 Aprenda tudo o que você precisa saber para dominar a área de Deep Learning utilizando a biblioteca PyTorch e o Python!
