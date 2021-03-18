@@ -4,6 +4,11 @@
 */Slide/
 *.zip
 
+ds_business/Departamento de manutenção/
+ds_business/Departamento médico/
+ds_business/models/pm_weights.hdf5
+ds_business/models/dm_weights.hdf5
+
 nlp_deep_learning/trainingandtestdata/
 nlp_deep_learning/__MACOSX/
 nlp_deep_learning/ckpts_#1/
