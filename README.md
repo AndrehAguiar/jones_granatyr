@@ -11,7 +11,7 @@ Aprenda a descobrir padrões escondidos em bases de dados comerciais utilizando 
 
 Data Science aplicado em 6 problemas reais de negócios! Marketing, vendas, RH, relações públicas, medicina e produção!
 
-#### [Data Science for Business](https://github.com/AndrehAguiar/jones_granatyr/tree/main/dl_PyTorch)
+#### [Data Science for Business](https://github.com/AndrehAguiar/jones_granatyr/tree/main/ds_business)
 ---
 
 ## [Deep Learning de A à Z com PyTorch e Python](https://www.udemy.com/share/102EY2BUUfdFpRRng=/)
